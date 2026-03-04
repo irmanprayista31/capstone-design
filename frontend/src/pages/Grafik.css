@@ -1,0 +1,1371 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.grafik-navbar-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.grafik-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+    padding: 0 20px; 
+    height: 60px; 
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.grafik-navbar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.grafik-hamburger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.grafik-hamburger:hover {
+    background: none;
+}
+
+.grafik-hamburger img {
+    display: none; 
+    width: 28px !important;
+    height: auto;
+}
+
+.grafik-navbar-left img {
+    width: 36px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.grafik-navbar-left a {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.grafik-navbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.grafik-navbar-right img {
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.grafik-navbar-other-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.grafik-other-icon {
+    display: none;
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.grafik-navbar-other-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 41.5px;
+    right: -20px;
+    border-radius: 0px 0px 6px 6px;
+    overflow: hidden;
+    z-index: 101;
+    box-shadow: 0 7px 10px -4px rgba(0, 0, 0, 0.2);
+}
+
+.grafik-navbar-other-dropdown-menu a {
+    text-decoration: none;
+    padding: 8px 14px;
+    text-align: center;
+}
+
+.grafik-navbar-right-desktop a {
+    padding: 7px 12px;              
+    border: 1px solid transparent;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.grafik-garis {
+    width: 1px;
+    height: 25px;
+    margin: 0px 12px;
+}
+
+/* ========= Notifikasi ========== */
+.grafik-navbar-notification {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.grafik-notification-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5px;
+}
+
+.grafik-notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -1px;
+    background-color: #ff4757;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    height: 18px;
+    min-width: 18.5px;
+    border-radius: 999px;
+    line-height: 1;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.grafik-notification-icon {
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.grafik-navbar-notification-dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px;
+    top: 41.5px;
+    right: -125px;
+    border-radius: 0px 0px 6px 6px;
+    z-index: 101;
+    box-shadow: 0 7px 10px -3px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-height: 300px;
+}
+
+.grafik-notification-kolom {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px;
+}
+
+.grafik-notification-kolom > *:not(:last-child) {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 15px;
+}
+
+.grafik-notification-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.grafik-notification-judul-nolimit {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.grafik-notification-judul {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.grafik-notification-isi {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.grafik-notification-isi span{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #626262;
+}
+
+.grafik-hapus-notifikasi-btn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 5px 8px 8px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.grafik-hapus-notifikasi-btn:hover {
+    background-color: #686868;
+}
+/* ============================ */
+
+.grafik-language-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.grafik-globe-icon {
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.grafik-dropdown-language {
+    position: absolute;
+    top: 41.5px;
+    right: -30px;
+    border-radius: 0px 0px 6px 6px;
+    overflow: hidden;
+    z-index: 101;
+    box-shadow: 0 7px 10px -4px rgba(0, 0, 0, 0.2);
+}
+
+.grafik-dropdown-language div {
+    padding: 8px 14px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.grafik-mode-toggle {
+    width: 50px;
+    height: 25px;
+    border-radius: 20px;
+    padding: 3px;
+    margin: 0 12px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.grafik-mode-toggle:hover {
+    background-color: transparent;
+}
+
+.grafik-mode-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.grafik-mode-toggle.grafik-dark .grafik-mode-icon {
+    transform: translateX(11px);
+}
+
+.grafik-mode-toggle.grafik-light .grafik-mode-icon {
+    transform: translateX(-15px);
+}
+
+.grafik-sidebar {
+    position: fixed;
+    width: 180px;
+    height: 100vh;
+    padding-top: 80px;
+    transition: transform 0.3s ease;
+}
+
+.grafik-sidebar a {
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.grafik-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 180px;
+    padding: 15px 65px 30px 70px;
+}
+
+.grafik-feature-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 20px;
+    min-height: 70vh;
+}
+
+/*========== Loading ========*/
+.grafik-loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertikal */
+    height: 80vh; 
+    width: 100%;
+    flex-direction: column;
+}
+
+.grafik-loading-spinner {
+    animation: kamar-rotate 1s linear infinite;
+}
+
+@keyframes kamar-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* ========================= */
+
+.grafik {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    box-shadow:  0 3px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.grafik h3 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.grafik-header h1 {
+    margin: 0;
+    padding: 20px 0px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: left;
+} 
+
+/* ========= Grafik Pilih MCB ========== */
+.grafik-mcb {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 20px 20px;
+    background-color: #ffffff;
+    box-shadow:  0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.grafik-pilih-mcb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.grafik-pilih-mcb label {
+    font-weight: bold;
+    color: #000000;
+    font-size: 15px;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.grafik-pilih-mcb select {
+    background-color: #ececec;
+    color: #000000;
+    outline: none;
+    border: none;
+    padding: 11px;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.grafik-keterangan-mcb {
+    color: #686868;
+    font-size: 12px;
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+/* ========== Filter Grafik ========== */
+.grafik-date-filters {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow:  0 3px 7px rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+
+.grafik-pilih-mode {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.grafik-pilih-mode label {
+    font-weight: bold;
+    color: #000000;
+    font-size: 15px;
+    margin-right: 10px;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.grafik-pilih-mode select {
+    padding: 11px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    background-color: #ececec;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.grafik-filter-tanggal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.grafik-pilih-tanggal-dari  {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+/* ======================================= */
+
+/* ============ Dari Tanggal ============= */
+.grafik-kolom-pilih-tanggal-dari {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    width: 100%;
+}
+
+.grafik-kolom-pilih-tanggal-dari label {
+    font-weight: bold;
+    color: #000000;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.grafik-kolom-pilih-tanggal-dari input {
+    padding: 11px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    background-color: #ececec;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+/* ======================================== */
+
+/* ============ sampai Tanggal ============= */
+.grafik-kolom-pilih-tanggal-sampai {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.grafik-kolom-pilih-tanggal-sampai label {
+    font-weight: bold;
+    color: #000000;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.grafik-kolom-pilih-tanggal-sampai input {
+    padding: 11px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    background-color: #ececec;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+/* ======================================== */
+
+/* ========= Tombol Filter =========== */
+.grafik-filter-pilih-tombol {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+}
+
+.grafik-filter-pilih-tombol button {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    border-radius: 15px;
+    color: #ffffff;
+    margin: 0;
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.grafik-filter-pilih-tombol button:hover,
+.grafik-filter-pilih-tombol button:active {
+    background-color: #686868;
+} 
+/* ===================================== */
+
+/* ========== Grafik =========== */
+.grafik-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #000000 #ffffff00;
+    background-color: #ffffff;
+}
+
+.grafik-scroll-container {
+    min-width: 1000px;
+    width: 100%;
+}
+
+.grafik-tampil {
+    width: 100%;
+    max-width: 100%;
+}
+/* ============================= */
+
+/* ============ Ringkasan ============= */
+.grafik-ringkasan-grafik {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: #ffffff;
+    box-shadow:  0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.grafik-ringkasan-grafik h4 {
+    font-size: 25px;
+    margin: 0;
+    /* color: #737373; */
+    color: #000000;
+    text-align: center;
+}
+
+.grafik-periode {
+    display: flex;
+    flex-direction: column;
+    background-color: #ececec;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.grafik-periode p {
+    padding-bottom: 15px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grafik-periode-isi {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    gap: 3px;
+}
+
+.grafik-periode-isi small {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.grafik-ringkasan-kamar-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+}
+
+.grafik-ringkasan-kamar {
+    flex: 1; 
+    background-color: #ececec;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.grafik-judul-kamar {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+}
+
+.grafik-kwh-kamar {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    gap: 3px;
+}
+
+.grafik-kwh-kamar span {
+    font-size: 15px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.grafik-total-keseluruhan {
+    background-color: #ececec;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.grafik-judul-total {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000
+}
+
+.grafik-isi-total {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    gap: 3px;
+    color: #000000
+}
+
+.grafik-isi-total span {
+    font-size: 15px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.grafik-footer-edit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 180px;
+    padding-left: 35px;
+    padding-bottom: 20px;
+}
+
+.grafik-footer-icon {
+    width: auto;
+    height: 16px;
+    padding-bottom: 1px;
+}
+
+.grafik-footer-edit p {
+    font-size: 14px;
+}
+
+/* ----Komponen dalam Light Mode------------------------------------- */
+.grafik-light-mode .grafik-navbar {
+    background-color: #ffffff ;
+}
+
+.grafik-light-mode .grafik-navbar-notification-dropdown {
+    background-color: #ffffff;
+}
+
+.grafik-light-mode .grafik-navbar-other-dropdown-menu {
+    background-color: white;
+}
+
+.grafik-light-mode .grafik-navbar-other-dropdown-menu a {
+    color: #000000;
+}
+
+.grafik-light-mode .grafik-navbar-other-dropdown-menu a:hover,
+.grafik-light-mode .grafik-navbar-other-dropdown-menu a:active {
+    background-color: #000;
+    color: #fff;
+}
+
+.grafik-light-mode .grafik-navbar-right-desktop a {
+    color: #000000;
+}
+
+.grafik-light-mode .grafik-navbar-right-desktop a:hover,
+.grafik-light-mode .grafik-navbar-right-desktop a:active {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.grafik-light-mode .grafik-garis {
+    background-color: #000000;
+}
+
+.grafik-light-mode .grafik-dropdown-language {
+    background-color: white;
+}
+
+.grafik-light-mode .grafik-dropdown-language div:hover,
+.grafik-light-mode .grafik-dropdown-language div:active {
+    background-color: #000;
+    color: #fff;
+}
+
+.grafik-light-mode .grafik-mode-toggle {
+    border: 1px solid #000000;
+}
+
+.grafik-light-mode .grafik-mode-icon {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.5);
+}
+
+.grafik-light-mode .grafik-sidebar {
+    background-color: #111;
+}
+
+.grafik-light-mode .grafik-sidebar a {
+    color: white;
+}
+
+.grafik-light-mode .grafik-sidebar a:hover,
+.grafik-light-mode .grafik-sidebar a:active {
+    background-color: white;
+    color: #111;
+}
+
+.grafik-light-mode .grafik {
+    background-color: #ffffff;
+}
+
+.grafik-light-mode .grafik h3 {
+    color: #737373;
+}
+/* ------------------------------------------------------------------- */
+
+/* ----Komponen dalam Dark Mode------------------------------------- */
+.grafik-dark-mode {
+    background-color: #2d2d2d;
+}
+
+.grafik-dark-mode .grafik-navbar-notification-dropdown {
+    background-color: #424242;
+}
+
+.grafik-dark-mode .grafik-notification-isi span{
+    color: #dddddd;
+}
+
+.grafik-dark-mode .grafik-notification-judul-nolimit {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-notification-judul {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-error p {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-error button {  
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-hapus-notifikasi-btn:hover {
+    background-color: #686868;
+}
+
+.grafik-dark-mode .grafik-navbar {
+    background-color: #424242;
+}
+
+.grafik-dark-mode .grafik-navbar-left a {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-hamburger img {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 2.5px 3px 2.5px 2px;
+}
+
+.grafik-dark-mode .grafik-logo-web {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 4px 2px;
+}
+
+.grafik-dark-mode .grafik-navbar-right img {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.grafik-dark-mode .grafik-navbar-other-dropdown-menu {
+    background-color: #424242;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.grafik-dark-mode .grafik-navbar-other-dropdown-menu a {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-navbar-other-dropdown-menu a:hover,
+.grafik-dark-mode .grafik-navbar-other-dropdown-menu a:active {
+    background-color: #000;
+    color: #fff;
+}
+ 
+.grafik-dark-mode .grafik-navbar-right-desktop a {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-navbar-right-desktop a:hover,
+.grafik-dark-mode .grafik-navbar-right-desktop a:active {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-garis {
+    background-color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-language-switch img {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.grafik-dark-mode .grafik-dropdown-language {
+    background-color: #424242;
+    color: #ffffff;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.grafik-dark-mode .grafik-dropdown-language div:hover,
+.grafik-dark-mode .grafik-dropdown-language div:active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-mode-toggle {
+    border: 1px solid #ffffff;
+}
+
+.grafik-dark-mode .grafik-mode-icon {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0px 7px rgba(255, 255, 255, 0.9);
+    padding: 2px;
+}
+
+.grafik-dark-mode .grafik-sidebar {
+    background-color: #111;
+}
+
+.grafik-dark-mode .grafik-sidebar a {
+    color: white;
+}
+
+.grafik-dark-mode .grafik-sidebar a:hover,
+.grafik-dark-mode .grafik-sidebar a:active {
+    background-color: #424242;
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-main-content {
+    background-color: #2d2d2d;
+}
+
+.grafik-dark-mode .grafik {
+    background-color: #424242;
+}
+
+.grafik-dark-mode .grafik h3 {
+    color: #b7b7b7;
+}
+
+.grafik-dark-mode .grafik-header h1 {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-pilih-mcb label {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-mcb {
+    background-color: #2d2d2d;
+}
+
+.grafik-dark-mode .grafik-keterangan-mcb {
+    color: #b8b8b8;
+}
+
+.grafik-dark-mode .grafik-pilih-mode label {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-kolom-pilih-tanggal-dari label {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-kolom-pilih-tanggal-sampai label {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-filter-pilih-tombol button {
+    background-color: #636363;
+}
+
+.grafik-dark-mode .grafik-filter-pilih-tombol button:hover,
+.grafik-dark-mode .grafik-filter-pilih-tombol button:active {
+    background-color: #484848;
+} 
+
+.grafik-dark-mode .grafik-scroll-wrapper {
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow:  0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.grafik-dark-mode .grafik-ringkasan-grafik {
+    background-color: #2d2d2d;
+}
+
+.grafik-dark-mode .grafik-ringkasan-grafik h4 {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-periode {
+    background-color: #636363;
+}
+
+.grafik-dark-mode .grafik-periode p {
+   color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-periode-isi {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-periode-isi small {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-ringkasan-kamar {
+    background-color: #636363;
+}
+
+.grafik-dark-mode .grafik-judul-kamar {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-kwh-kamar {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-kwh-kamar span {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-total-keseluruhan {
+    background-color: #636363;
+}
+
+.grafik-dark-mode .grafik-judul-total {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-isi-total {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-isi-total span {
+    color: #ffffff;
+}
+
+.grafik-dark-mode .grafik-footer-edit img {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.grafik-dark-mode .grafik-footer-edit {
+    background-color: #2d2d2d;
+}
+
+.grafik-dark-mode .grafik-date-filters {
+    background-color: #2d2d2d;
+}
+
+.grafik-dark-mode .grafik-footer-edit p {
+    color: #ffffff;
+}
+/* ------------------------------------------------------------------- */
+
+/* ----------Responsif------------------------------------------------ */
+@media (max-width: 1452px) {
+    .grafik-pilih-tanggal-dari {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .grafik-kolom-pilih-tanggal-dari {
+        width: 100%;
+    }
+
+    .grafik-kolom-pilih-tanggal-dari input {
+        width: 100%;
+    }
+
+    .grafik-kolom-pilih-tanggal-sampai {
+        width: 100%;
+    }
+
+    .grafik-kolom-pilih-tanggal-sampai input {
+        width: 100%;
+    }
+
+    .grafik-filter-tanggal {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1033px) {
+    .grafik-filter-pilih-tombol {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grafik h3 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 1020px) {
+    .grafik-ringkasan-kamar-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 973px) {
+    .grafik-hamburger img {
+        display: block;
+    }
+
+    .grafik-sidebar {
+        transform: translateX(-100%);
+        z-index: 99;
+    }
+
+    .grafik-sidebar.grafik-open-sidebar {
+        transform: translateX(0);
+    }
+
+    .grafik-main-content {
+        margin-left: 0 !important;
+    }
+
+    .grafik-footer-edit {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 785px) {
+    .grafik-ringkasan-grafik h4 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 647px) {
+    .grafik-other-icon {
+        display: block;
+    }
+
+    .grafik-navbar-right-desktop {
+        display: none;
+    }
+
+    .grafik-sidebar {
+        width: 130px;
+    }
+
+    .grafik-main-content {
+        padding: 0px 40px;
+    }
+
+    .grafik-footer-edit {
+        justify-content: center;
+        gap: 5px;
+        margin-left: 0px;
+        padding-left: 0px;
+        padding-bottom: 30px;
+    }
+
+    .grafik-footer-icon {
+        width: auto;
+        height: 16px;
+        padding-bottom: 0.5px;
+    }
+
+    .grafik-footer-edit p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 620px) {
+    .grafik-pilih-tanggal-dari {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 517px) {
+    .grafik h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 451px) {
+    .grafik-navbar {
+        padding: 0px 10px;
+        height: 55px;
+    }
+
+    .grafik-navbar-left img {
+        width: 30px;
+    }
+
+    .grafik-navbar-left a {
+        font-size: 18px;
+    }
+
+    .grafik-navbar-right img {
+        width: 23px;
+        margin: 0px 8px;
+    }
+
+    .grafik-navbar-other-dropdown-menu {
+        top: 39px;
+        right: -25px;
+    }
+
+    .grafik-navbar-notification-dropdown {
+        top: 39px;
+        right: -90px;
+    }
+
+    .grafik-dropdown-language {
+        top: 39px;
+    }
+
+    .grafik-mode-toggle {
+        width: 45px;
+        height: 24px;
+        margin: 0px 5px 0px 8px;
+    }
+
+    .grafik-mode-toggle.grafik-dark .grafik-mode-icon {
+        transform: translateX(11px);
+    }
+
+    .grafik-mode-toggle.grafik-light .grafik-mode-icon {
+        transform: translateX(-11px);
+    }
+
+    .grafik {
+        padding: 30px;
+    }
+
+    .grafik-tombol-kamar label {
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    .grafik-footer-edit {
+        margin-left: 0 !important;
+        justify-content: center;
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 443px) {
+    .grafik-pilih-mcb {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .grafik-pilih-mcb select {
+       width: 100%;
+    }
+
+    .grafik-ringkasan-grafik h4 {
+        font-size: 17px;
+    }
+
+    .grafik-header h1 {
+        font-size: 25px;
+    } 
+    
+    .grafik-periode p {
+        font-size: 16px;
+    }
+
+    .grafik-periode-isi {
+        font-size: 13px;
+    }
+
+    .grafik-periode-isi small {
+        font-size: 13px;
+    }
+
+    .grafik-judul-kamar {
+        font-size: 16px;
+    }
+
+    .grafik-kwh-kamar {
+        font-size: 13px;
+    }
+
+    .grafik-kwh-kamar span {
+        font-size: 13px;
+    }
+
+    .grafik-judul-total {
+        font-size: 16px;
+    }
+
+    .grafik-isi-total {
+        font-size: 13px;
+    }
+
+    .grafik-isi-total span {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 422px) {
+    .grafik-pilih-mode {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grafik-pilih-mode label {
+        margin-bottom: 10px;
+    }
+
+    .grafik-pilih-tanggal-dari  {
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    .grafik-kolom-pilih-tanggal-dari {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .grafik-kolom-pilih-tanggal-sampai {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 373px) {
+    .grafik-navbar-left img {
+        margin-right: 8px;
+    }
+
+    .grafik-garis {
+        display: none;
+    }
+
+    .grafik-footer-icon {
+        height: 13px;
+    }
+
+    .grafik-footer-edit p {
+        font-size: 11px;
+    }
+}
+/* ------------------------------------------------------------------- */

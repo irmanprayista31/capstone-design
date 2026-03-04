@@ -1,0 +1,1272 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html, #root {
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+/* ======== gagal memuat kamar ========= */
+.kamar-error-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.kamar-error {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.kamar-error p {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.kamar-error button {  
+    width: fit-content;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    padding: 10px 40px;
+    margin-top: 25px;
+    border-radius: 15px;
+    background-color: #000000;
+}
+/* ===================================== */
+
+.kamar-halaman {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.kamar-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+    padding: 0 20px; 
+    height: 60px; 
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.kamar-navbar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.kamar-hamburger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.kamar-hamburger:hover {
+    background: none;
+}
+
+.kamar-hamburger img {
+    display: none;
+    width: 28px !important;
+    height: auto;
+}
+
+.kamar-navbar-left img {
+    width: 36px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.kamar-navbar-left a {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.kamar-navbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.kamar-navbar-right img {
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.kamar-navbar-other-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.kamar-other-icon {
+    display: none;
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.kamar-navbar-other-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 41.5px;
+    right: -20px;
+    border-radius: 0px 0px 6px 6px;
+    overflow: hidden;
+    z-index: 101;
+    box-shadow: 0 7px 10px -4px rgba(0, 0, 0, 0.2);
+}
+
+.kamar-navbar-other-dropdown-menu a {
+    text-decoration: none;
+    padding: 8px 14px;
+    text-align: center;
+}
+
+.kamar-navbar-right-desktop a {
+    padding: 7px 12px;              
+    border: 1px solid transparent;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.kamar-garis {
+    width: 1px;
+    height: 25px;
+    margin: 0px 12px;
+}
+
+/* ========= Notifikasi ========== */
+.kamar-navbar-notification {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.kamar-notification-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5px;
+}
+
+.kamar-notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -1px;
+    background-color: #ff4757;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    height: 18px;
+    min-width: 18.5px;
+    border-radius: 999px;
+    line-height: 1;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.kamar-notification-icon {
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.kamar-navbar-notification-dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px;
+    top: 41.5px;
+    right: -125px;
+    border-radius: 0px 0px 6px 6px;
+    z-index: 101;
+    box-shadow: 0 7px 10px -3px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-height: 300px;
+}
+
+.kamar-notification-kolom {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px;
+}
+
+.kamar-notification-kolom > *:not(:last-child) {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 15px;
+}
+
+.kamar-notification-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.kamar-notification-judul-nolimit {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.kamar-notification-judul {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.kamar-notification-isi {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.kamar-notification-isi span{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #626262;
+}
+
+.kamar-hapus-notifikasi-btn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 5px 8px 8px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.kamar-hapus-notifikasi-btn:hover {
+    background-color: #686868;
+}
+/* ============================ */
+
+.kamar-language-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.kamar-globe-icon {
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.kamar-dropdown-language {
+    position: absolute;
+    top: 41.5px;
+    right: -30px;
+    border-radius: 0px 0px 6px 6px;
+    overflow: hidden;
+    z-index: 101;
+    box-shadow: 0 7px 10px -4px rgba(0, 0, 0, 0.2);
+}
+
+.kamar-dropdown-language div {
+    padding: 8px 14px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.kamar-mode-toggle {
+    width: 50px;
+    height: 25px;
+    border-radius: 20px;
+    padding: 3px;
+    margin: 0 12px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.kamar-mode-toggle:hover {
+    background-color: transparent;
+}
+
+.kamar-mode-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.kamar-mode-toggle.kamar-dark .kamar-mode-icon {
+    transform: translateX(11px);
+}
+
+.kamar-mode-toggle.kamar-light .kamar-mode-icon {
+    transform: translateX(-15px);
+}
+
+.kamar-sidebar {
+    position: fixed;
+    width: 180px;
+    height: 100vh;
+    background-color: #111;
+    padding-top: 80px;
+    transition: transform 0.3s ease;
+}
+
+.kamar-sidebar a {
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.kamar-sidebar a:hover,
+.kamar-sidebar a:active {
+    background-color: white;
+    color: #111;
+}
+
+.kamar-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 180px;
+    padding: 15px 65px 30px 70px;
+}
+
+.kamar-feature-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 20px;
+    min-height: 70vh;
+}
+
+/*========== Loading ========*/
+.kamar-loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertikal */
+    height: 80vh; 
+    width: 100%;
+    flex-direction: column;
+}
+
+.kamar-loading-spinner {
+    animation: kamar-rotate 1s linear infinite;
+}
+
+@keyframes kamar-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* ========================= */
+
+.kamar-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 50px;
+}
+
+.kamar-item {
+    flex: 1 1 calc(50% - 25px);
+    display: flex;
+    flex-direction: column;
+}
+
+.kamar-item h3 {
+    margin: 0;
+    padding: 0px 0px 20px 20px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.kamar-list {
+    display: flex;
+    flex-direction: column;
+    box-shadow:  0 3px 7px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    gap: 25px; 
+    border-radius: 20px;
+}
+
+.kamar-keterangan-isi {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+    text-align: left;
+}
+
+.kamar-icon {
+    width: 150px;
+    height: auto; 
+    flex-shrink: 0;
+}
+
+.kamar-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.kamar-info p {
+    font-size: 15px;
+    margin: auto 0px;
+}
+
+.kamar-tombol-kamar label {
+    display: flex; 
+    flex-direction: column;
+    font-size: 15px;
+    padding-left: 15px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+.kamar-status-label.lebihBatas {
+  color: #ff0000 !important;
+}
+
+.kamar-status-label.peringatan {
+  color: #ee9300 !important;
+}
+
+.kamar-status-label.aman {
+  color: #00b600 !important;
+}
+
+.kamar-on-off {
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px;
+    color: white;
+    cursor: pointer;
+}
+
+.kamar-status-gunakan {
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.kamar-status-gunakan.active {
+    background-color: #D1D1D1;
+    color: #000000;
+    cursor: not-allowed;
+}
+
+.kamar-status-gunakan.inactive {
+    background-color: #000000; 
+    color: #ffffff
+}
+
+.kamar-status-gunakan.inactive:hover,
+.kamar-status-gunakan.inactive:active {
+    background-color: #686868;
+}
+
+.kamar-tombol-edit-hapus {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.kamar-tombol-edit {
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.kamar-tombol-edit:hover,
+.kamar-tombol-edit:active {
+    background-color: #686868;
+}
+
+.kamar-estimasi-biaya {
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.kamar-tombol-hapus {
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.kamar-tombol-hapus:hover,
+.kamar-tombol-hapus:active {
+    background-color: #686868;
+}
+
+.kamar-hapus-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 103;
+}
+
+.kamar-hapus-box {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    padding: 12px 30px 30px 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.kamar-hapus-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.kamar-hapus-buttons button {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.kamar-hapus-buttons button:active,
+.kamar-hapus-buttons button:hover {
+    background-color: #686868;
+}
+
+.kamar-daftar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 103;
+}
+
+.kamar-daftar-container {
+    width: 600px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow:  0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.kamar-daftar-container h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 25px;
+    padding: 0px 0px 30px 0px;
+}
+
+.kamar-daftar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: auto;
+}
+
+.kamar-daftar-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kamar-daftar-left h3 {
+    margin: 0;
+    padding: 0px 0px 10px 0px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.kamar-daftar-icon {
+    text-align: center;
+}
+
+.kamar-data-sedang-digunakan table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.kamar-data-sedang-digunakan td {
+    font-size: 14px;
+    color: #000;
+    padding: 4px 0px 8px 10px;
+}
+
+.kamar-data-sedang-digunakan td:first-child {
+    width: 22%;
+}
+
+.kamar-daftar-icon-kamar {
+    width: 160px;
+    height: auto;
+}
+
+.kamar-daftar-right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px 15px 0px 15px;
+}
+
+.kamar-daftar-right input {
+    margin: 0;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 12px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: box-shadow 0.2s ease;
+}
+
+.kamar-daftar-right input:focus {
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}  
+  
+.kamar-daftar-right input::placeholder {
+    color: #A2A2A2;
+}
+
+.kamar-daftar-labelnama {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: start;
+}
+
+.kamar-daftar-labelnomor {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: start;
+}
+
+.kamar-daftar-labelbatas {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: start;
+    overflow: none;
+}
+
+.kamar-daftar-labelsisa {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: start;
+}
+
+.kamar-daftar-labeltambahan {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: start;
+}
+
+.kamar-daftar-right button {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 15px;
+    font-weight: bold;
+    padding: 13px;
+    cursor: pointer;
+}
+
+.kamar-daftar-right .kamar-daftar-button-kamar {
+    margin-top: 18px;
+}
+
+.kamar-daftar-right .kamar-daftar-button-tutup {
+    margin-top: 15px;
+}
+
+.kamar-daftar-right button:hover,
+.kamar-daftar-right button:active {
+    background-color: #686868;
+}
+
+.kamar-daftar-container p {
+    font-size: 13px;
+    color: #666666;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.kamar-footer-edit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 180px;
+    padding-left: 35px;
+    padding-bottom: 20px;
+}
+
+.kamar-footer-icon {
+    width: auto;
+    height: 16px;
+    padding-bottom: 1px;
+}
+
+.kamar-footer-edit p {
+    font-size: 14px;
+}
+
+/* ----Komponen dalam Light Mode------------------------------------- */
+.kamar-light-mode .kamar-navbar {
+    background-color: #ffffff;
+}
+
+.kamar-light-mode .kamar-navbar-notification-dropdown {
+    background-color: #ffffff;
+}
+
+.kamar-light-mode .kamar-navbar-other-dropdown-menu {
+    background-color: white;
+}
+
+.kamar-light-mode .kamar-navbar-other-dropdown-menu a {
+    color: #000000;
+}
+
+.kamar-light-mode .kamar-navbar-other-dropdown-menu a:hover,
+.kamar-light-mode .kamar-navbar-other-dropdown-menu a:active {
+    background-color: #000;
+    color: #fff;
+}
+
+.kamar-light-mode .kamar-navbar-right-desktop a {
+    color: #000000;
+}
+
+.kamar-light-mode .kamar-navbar-right-desktop a:hover,
+.kamar-light-mode .kamar-navbar-right-desktop a:active {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.kamar-light-mode .kamar-garis {
+    background-color: #000000;
+}
+
+.kamar-light-mode .kamar-dropdown-language {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.kamar-light-mode .kamar-dropdown-language div:hover,
+.kamar-light-mode .kamar-dropdown-language div:active {
+    background-color: #000;
+    color: #fff;
+}
+
+.kamar-light-mode .kamar-mode-toggle {
+    border: 1px solid #000000;
+}
+
+.kamar-light-mode .kamar-mode-icon {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.5);
+}
+
+.kamar-light-mode .kamar-sidebar {
+    background-color: #111;
+}
+
+.kamar-light-mode .kamar-sidebar a {
+    color: white;
+}
+
+.kamar-light-mode .kamar-sidebar a:hover,
+.kamar-light-mode .kamar-sidebar a:active {
+    background-color: white;
+    color: #111;
+}
+
+.kamar-light-mode .kamar-item h3 {
+    color: #000000;
+}
+
+.kamar-light-mode .kamar-list {
+    background-color: #ffffff;
+}
+
+.kamar-light-mode .kamar-info p {
+    color: #000000;
+}
+/* ------------------------------------------------------------------- */
+
+/* ----Komponen dalam Dark Mode------------------------------------- */
+.kamar-dark-mode {
+    background-color: #2d2d2d;
+}
+
+.kamar-dark-mode .kamar-navbar-notification-dropdown {
+    background-color: #424242;
+}
+
+.kamar-dark-mode .kamar-notification-isi span{
+    color: #dddddd;
+}
+
+.kamar-dark-mode .kamar-notification-judul-nolimit {
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-notification-judul {
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-error p {
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-error button {  
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-hapus-notifikasi-btn:hover {
+    background-color: #686868;
+}
+
+.kamar-dark-mode .kamar-navbar {
+    background-color: #424242;
+}
+
+.kamar-dark-mode .kamar-navbar-left a {
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-hamburger img {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 2.5px 3px 2.5px 2px;
+}
+
+.kamar-dark-mode .kamar-logo-web {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 4px 2px;
+}
+
+.kamar-dark-mode .kamar-navbar-right img {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.kamar-dark-mode .kamar-navbar-other-dropdown-menu {
+    background-color: #424242;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.kamar-dark-mode .kamar-navbar-other-dropdown-menu a {
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-navbar-other-dropdown-menu a:hover,
+.kamar-dark-mode .kamar-navbar-other-dropdown-menu a:active {
+    background-color: #000;
+    color: #fff;
+}
+ 
+.kamar-dark-mode .kamar-navbar-right-desktop a {
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-navbar-right-desktop a:hover,
+.kamar-dark-mode .kamar-navbar-right-desktop a:active {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-garis {
+    background-color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-language-switch img {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.kamar-dark-mode .kamar-dropdown-language {
+    background-color: #424242;
+    color: #ffffff;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.kamar-dark-mode .kamar-dropdown-language div:hover,
+.kamar-dark-mode .kamar-dropdown-language div:active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-mode-toggle {
+    border: 1px solid #ffffff;
+}
+
+.kamar-dark-mode .kamar-mode-icon {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0px 7px rgba(255, 255, 255, 0.9);
+    padding: 2px;
+}
+
+.kamar-dark-mode .kamar-sidebar {
+    background-color: #111;
+}
+
+.kamar-dark-mode .kamar-sidebar a {
+    color: white;
+}
+
+.kamar-dark-mode .kamar-sidebar a:hover,
+.kamar-dark-mode .kamar-sidebar a:active {
+    background-color: #424242;
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-main-content {
+    background-color: #2d2d2d;
+}
+
+.kamar-dark-mode .kamar-item h3 {
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-list {
+    background-color: #424242;
+}
+
+.kamar-dark-mode .kamar-info p {
+    color: #ffffff;
+}
+
+.kamar-dark-mode .kamar-icon {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 10px;
+}
+
+.kamar-dark-mode .kamar-status-label.lebihBatas {
+  color: #ff5555 !important;
+}
+
+.kamar-dark-mode .kamar-status-label.peringatan {
+  color: #ff9d00 !important;
+}
+
+.kamar-dark-mode .kamar-status-label.aman {
+  color: #00ff00 !important;
+}
+
+.kamar-dark-mode .kamar-footer-edit {
+    background-color: #2d2d2d;
+}
+
+.kamar-dark-mode .kamar-footer-edit img {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.kamar-dark-mode .kamar-footer-edit p {
+    color: #ffffff;
+}
+/* ------------------------------------------------------------------- */
+
+/* ----------Responsif------------------------------------------------ */
+@media (max-width: 1233px) {
+    .kamar-keterangan-isi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .kamar-info {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 973px) {
+    .kamar-hamburger img {
+        display: block;
+    }
+
+    .kamar-sidebar {
+        transform: translateX(-100%);
+        z-index: 99;
+    }
+
+    .kamar-sidebar.kamar-open-sidebar {
+        transform: translateX(0);
+    }
+
+    .kamar-main-content {
+        margin-left: 0 !important;
+    }
+
+    .kamar-daftar-overlay {
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
+
+    .kamar-daftar-container {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .kamar-daftar-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kamar-footer-edit {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 785px) {
+    .kamar-daftar-container {
+        max-width: 80vh;
+    }
+}
+
+@media (max-width: 647px) {
+    .kamar-other-icon {
+        display: block;
+    }
+
+    .kamar-navbar-right-desktop {
+        display: none;
+    }
+
+    .kamar-sidebar {
+        width: 130px;
+    }
+
+    .kamar-main-content {
+        padding: 0px 40px;
+    }
+
+    .kamar-item {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kamar-keterangan-isi {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .kamar-footer-edit {
+        justify-content: center;
+        gap: 5px;
+        margin-left: 0px;
+        padding-left: 0px;
+        padding-bottom: 30px;
+    }
+
+    .kamar-footer-icon {
+        width: auto;
+        height: 16px;
+        padding-bottom: 0.5px;
+    }
+
+    .kamar-footer-edit p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 620px) {
+    .kamar-daftar-container {
+        max-width: 70vh;
+    }
+}
+
+@media (max-width: 531px) {
+    .kamar-daftar-container {
+        max-width: 60vh;
+    }
+}
+
+@media (max-width: 451px) {
+    .kamar-navbar {
+        padding: 0px 10px;
+        height: 55px;
+    }
+
+    .kamar-navbar-left img {
+        width: 30px;
+    }
+
+    .kamar-navbar-left a {
+        font-size: 18px;
+    }
+
+    .kamar-navbar-right img {
+        width: 23px;
+        margin: 0px 8px;
+    }
+
+    .kamar-navbar-other-dropdown-menu {
+        top: 39px;
+        right: -25px;
+    }
+
+    .kamar-navbar-notification-dropdown {
+        top: 39px;
+        right: -90px;
+    }
+
+    .kamar-dropdown-language {
+        top: 39px;
+    }
+
+    .kamar-mode-toggle {
+        width: 45px;
+        height: 24px;
+        margin: 0px 5px 0px 8px;
+    }
+
+    .kamar-mode-toggle.kamar-dark .kamar-mode-icon {
+        transform: translateX(11px);
+    }
+
+    .kamar-mode-toggle.kamar-light .kamar-mode-icon {
+        transform: translateX(-11px);
+    }
+
+    .kamar-keterangan-isi {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .kamar-info p {
+        text-align: center;
+    }
+
+    .kamar-tombol-kamar label {
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    .kamar-footer-edit {
+        margin-left: 0 !important;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 373px) {
+    .kamar-navbar-left img {
+        margin-right: 8px;
+    }
+
+    .kamar-garis {
+        display: none;
+    }
+
+    .kamar-footer-icon {
+        height: 13px;
+    }
+
+    .kamar-footer-edit p {
+        font-size: 11px;
+    }
+}
+/* ------------------------------------------------------------------- */

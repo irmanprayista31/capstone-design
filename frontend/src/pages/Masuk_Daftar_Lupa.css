@@ -1,0 +1,436 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.login-flex-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+/* ======== Notifikasi ======== */
+.Toastify__close-button {
+    all: unset;              
+}
+
+.Toastify__close-button:hover {
+    background: none;
+}
+/* ============================ */
+
+.login-dark-mode {
+    background-color: #ffffff;
+}
+
+/* ======== Logo dan Deskripsi ======== */
+.login-left-column {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+  
+.login-logo-img {
+    width: 200px;
+    height: auto;
+}
+
+.login-left-column h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.login-description {
+    font-size: 18px;
+    margin-top: 10px;
+    line-height: 1.3;
+    text-align: center;
+}
+/* ======================= */
+
+/* ====== Form Kanan ===== */
+.login-right-column {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.login-language-switch {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1000;
+}
+
+.login-globe-icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.login-dropdown-language {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 120px;
+}
+  
+.login-dropdown-language div {
+    padding: 8px 12px;
+    cursor: pointer;
+    text-align: center;
+}
+  
+.login-dropdown-language div:hover {
+    background-color: #000000;
+    color: #fff;
+}
+  
+.login-dropdown-language div:active {
+    background-color: #000;
+    color: #fff;
+}
+  
+.login-right-column h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin: 0;
+}
+/* ======================== */
+
+/* ========= Phone ========= */
+.login-phone-input-container {
+    display: flex;
+    position: relative;
+}
+
+.login-phone-prefix {
+    position: absolute;
+    left: 12px;
+    top: 18px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.login-telepon-error-message {
+    position: absolute;
+    display: block;
+    color: #e74c3c;
+    font-size: 12px;
+    margin: 5px 0px 0px 10px;
+}
+
+.login-telepon-valid-message {
+    position: absolute;
+    display: block;
+    color: #27ae60;
+    font-size: 12px;
+    margin: 5px 0px 0px 10px;
+}
+
+.login-phone-input {
+    padding-left: 43px !important;
+}
+/* =============================== */
+
+/* ============ Email ============ */
+.login-email-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.login-email-error-message {
+    position: absolute;
+    display: block;
+    color: #e74c3c;
+    font-size: 12px;
+    margin: 5px 0px 0px 10px;
+}
+
+.login-email-valid-message {
+    position: absolute;
+    display: block;
+    color: #27ae60;
+    font-size: 12px;
+    margin: 5px 0px 0px 10px;
+}
+
+/* ======== Password ======== */
+.login-password-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.login-password-input-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.login-password-wrapper .login-icon {
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    width: 20px;
+    cursor: pointer;
+    opacity: 1;
+    z-index: 2;
+}
+
+.login-password-error-message {
+    position: absolute;
+    display: block;
+    color: #e74c3c;
+    font-size: 12px;
+    margin: 5px 0px 0px 10px;
+}
+
+.login-password-valid-message {
+    position: absolute;
+    display: block;
+    color: #27ae60;
+    font-size: 12px;
+    margin: 5px 0px 0px 10px;
+}
+
+.password-strength-indicator {
+    position: absolute;
+    color: #000000;
+    font-size: 12px;
+    right: 50px;
+    top: 19px;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 1;
+}
+/* ============================================= */
+
+/* ======== form email password ======== */
+form label {
+    display: block;
+    margin-top: 30px;
+    font-size: 14px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+  
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    padding-right: 45px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    font-size: 14px;
+    margin-top: 5px;
+    transition: box-shadow 0.2s ease;
+}
+  
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus {
+    outline: none;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}  
+  
+input::placeholder {
+    color: #A2A2A2;
+}
+/* ================================ */
+
+/* ======== lupa sandi ======== */
+.login-forgot a {
+    display: block;
+    text-align: right;
+    margin-top: 21px;
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+  
+.login-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login-forgot a:active {
+    text-decoration: underline;
+    color: #686868;
+}
+/* ======================= */
+
+/* ========== Tombol ========== */
+button {
+    font-size: 17px;
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+  
+button:hover {
+    background-color: #686868;
+}
+
+button:active {
+    background-color: #686868;
+}
+/* =========================== */
+
+/* ========= Daftar ========== */
+.login-register {
+    font-size: 14px;
+    text-align: left;
+    margin-top: 15px;
+    padding-left: 10px;
+}
+  
+.login-register a {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+  
+.login-register a:hover {
+    text-decoration: underline;
+}
+
+.login-register a:active {
+    text-decoration: underline;
+    color: #686868;
+}
+/* =========================== */
+
+@media (max-width: 958px) {
+    .login-flex-container {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .login-left-column {
+        padding: 60px 60px 50px 60px;
+    }
+
+    .login-right-column {
+        padding: 0px 60px 60px 60px;
+    }
+
+    .login-left-column h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .login-description {
+        text-align: center;
+    }
+
+    .login-right-column h2 {
+        font-size: 24px;
+    }
+
+    .login-logo-wrapper {
+        justify-content: center;
+    }
+
+    .login-logo-img {
+        width: 150px;
+    }
+}
+
+@media (max-width: 522px) {
+    form label {
+        margin-top: 40px;
+    }
+}
+  
+@media (max-width: 480px) {
+    .login-logo-wrapper {
+        flex-direction: column;
+    }
+
+    .login-left-column {
+        padding: 40px 15px 15px 15px;
+    }
+
+    .login-left-column h1 {
+        font-size: 42px;
+    }
+
+    .login-right-column h2 {
+        font-size: 28px;
+    }
+
+    .login-right-column {
+        padding: 0px 15px 18px 15px;
+    }
+
+    form label {
+        margin-top: 30px;
+    }
+
+    button {
+        margin-top: 60px;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"],
+    input[type="tel"] {
+        font-size: 13px;
+        padding: 13px;
+    }
+}
+
+@media (max-width: 432px) {
+    form label {
+        margin-top: 40px;
+    }
+}

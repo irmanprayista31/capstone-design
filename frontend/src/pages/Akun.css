@@ -1,0 +1,920 @@
+ * {
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.akun-navbar-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.akun-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+    padding: 0 20px; 
+    height: 60px; 
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.akun-navbar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.akun-hamburger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.akun-hamburger:hover {
+    background: none;
+}
+
+.akun-hamburger img {
+    display: none;
+    width: 28px !important;
+    height: auto;
+}
+
+.akun-navbar-left img {
+    width: 36px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.akun-navbar-left a {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.akun-navbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.akun-navbar-right img {
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.akun-navbar-other-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.akun-other-icon {
+    display: none;
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.akun-navbar-other-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 41.5px;
+    right: -20px;
+    border-radius: 0px 0px 6px 6px;
+    overflow: hidden;
+    z-index: 101;
+    box-shadow: 0 7px 10px -4px rgba(0, 0, 0, 0.2);
+}
+
+.akun-navbar-other-dropdown-menu a {
+    text-decoration: none;
+    padding: 8px 14px;
+    text-align: center;
+}
+
+.akun-navbar-right-desktop a {
+    padding: 7px 12px;              
+    border: 1px solid transparent;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.akun-garis {
+    width: 1px;
+    height: 25px;
+    margin: 0px 12px;
+}
+
+/* ========= Notifikasi ========== */
+.akun-navbar-notification {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.akun-notification-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5px;
+}
+
+.akun-notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -1px;
+    background-color: #ff4757;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    height: 18px;
+    min-width: 18.5px;
+    border-radius: 999px;
+    line-height: 1;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.akun-notification-icon {
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.akun-navbar-notification-dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px;
+    top: 41.5px;
+    right: -125px;
+    border-radius: 0px 0px 6px 6px;
+    z-index: 101;
+    box-shadow: 0 7px 10px -3px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-height: 300px;
+}
+
+.akun-notification-kolom {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px;
+}
+
+.akun-notification-kolom > *:not(:last-child) {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 15px;
+}
+
+.akun-notification-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.akun-notification-judul-nolimit {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.akun-notification-judul {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.akun-notification-isi {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.akun-notification-isi span{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #626262;
+}
+
+.akun-hapus-notifikasi-btn {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 5px 8px 8px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.akun-hapus-notifikasi-btn:hover {
+    background-color: #686868;
+}
+/* ============================ */
+
+.akun-language-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.akun-globe-icon {
+    width: 23px;
+    height: 23px;
+    margin: 0px 12px;
+    cursor: pointer;
+}
+
+.akun-dropdown-language {
+    position: absolute;
+    top: 41.5px;
+    right: -30px;
+    border-radius: 0px 0px 6px 6px;
+    overflow: hidden;
+    z-index: 101;
+    box-shadow: 0 7px 10px -4px rgba(0, 0, 0, 0.2);
+}
+
+.akun-dropdown-language div {
+    padding: 8px 14px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.akun-mode-toggle {
+    width: 50px;
+    height: 25px;
+    border-radius: 20px;
+    padding: 3px;
+    margin: 0 12px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.akun-mode-toggle:hover {
+    background-color: transparent;
+}
+
+.akun-mode-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.akun-mode-toggle.akun-dark .akun-mode-icon {
+    transform: translateX(11px);
+}
+
+.akun-mode-toggle.akun-light .akun-mode-icon {
+    transform: translateX(-15px);
+}
+
+.akun-sidebar {
+    position: fixed;
+    width: 180px;
+    height: 100vh;
+    background-color: #111;
+    padding-top: 80px;
+    transition: transform 0.3s ease;
+}
+
+.akun-sidebar a {
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.akun-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 180px;
+    padding: 15px 65px 30px 70px;
+}
+
+.akun-feature-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+}
+
+.akun-akun-user {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.akun-form {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.akun-form label {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 14px;
+    text-align: left; 
+}
+
+.akun-form input[type="email"],
+.akun-form input[type="password"],
+.akun-form input[type="text"],
+.akun-form input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    padding-right: 45px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: box-shadow 0.2s ease;
+}
+
+.akun-form input[type="email"]:focus,
+.akun-form input[type="password"]:focus,
+.akun-form input[type="text"]:focus,
+.akun-form input[type="tel"]:focus {
+    outline: none;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}  
+  
+.akun-form input::placeholder {
+    color: #A2A2A2;
+}
+
+.akun-hapus-box label {
+    display: flex;
+    padding-top: 15px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 14px;
+
+}
+
+.akun-password-wrapper {
+    position: relative;
+}
+  
+.akun-password-wrapper .akun-icon {
+    position: absolute;
+    right: 15px;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.akun-form button {
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px;
+    font-size: 14px;
+    margin: 0;
+    margin-top: 40px;
+}
+
+.akun-hapus-akun {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.akun-button-hapus {
+    padding: 12px;
+    margin: 0;
+    background-color: #C40000;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%; 
+}
+
+.akun-button-hapus:hover {
+    background-color: #9e0000;
+}
+
+.akun-hapus-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 103;
+}
+
+.akun-hapus-box {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    padding: 12px 30px 30px 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.akun-hapus-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.akun-hapus-buttons button {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.akun-hapus-buttons button:active,
+.akun-hapus-buttons button:hover {
+    background-color: #686868;
+}
+
+.akun-hapus-box input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    padding-right: 45px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: box-shadow 0.2s ease;
+}
+
+.akun-footer-edit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 180px;
+    padding-left: 35px;
+    padding-bottom: 20px;
+}
+
+.akun-footer-icon {
+    width: auto;
+    height: 16px;
+    padding-bottom: 1px;
+}
+
+.akun-footer-edit p {
+    font-size: 14px;
+}
+
+/* ----Komponen dalam Light Mode------------------------------------- */
+.akun-light-mode .akun-navbar {
+    background-color: #fff;
+}
+
+.akun-light-mode .akun-navbar-notification-dropdown {
+    background-color: #ffffff;
+}
+
+.akun-light-mode .akun-navbar-other-dropdown-menu {
+    background-color: white;
+}
+
+.akun-light-mode .akun-navbar-other-dropdown-menu a {
+    color: #000000;
+}
+
+.akun-light-mode .akun-navbar-other-dropdown-menu a:hover,
+.akun-light-mode .akun-navbar-other-dropdown-menu a:active {
+    background-color: #000;
+    color: #fff;
+}
+
+.akun-light-mode .akun-navbar-right-desktop a {
+    color: #000000;
+}
+
+.akun-light-mode .akun-navbar-right-desktop a:hover,
+.akun-light-mode .akun-navbar-right-desktop a:active {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.akun-light-mode .akun-garis {
+    background-color: #000000;
+}
+
+.akun-light-mode .akun-dropdown-language {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.akun-light-mode .akun-dropdown-language div:hover,
+.akun-light-mode .akun-dropdown-language div:active {
+    background-color: #000;
+    color: #fff;
+}
+
+.akun-light-mode .akun-mode-toggle {
+    border: 1px solid #000000;
+}
+
+.akun-light-mode .akun-mode-icon {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0px 7px rgba(0, 0, 0, 0.5);
+}
+
+.akun-light-mode .akun-sidebar {
+    background-color: #111;
+}
+
+.akun-light-mode .akun-sidebar a {
+    color: white;
+}
+
+.akun-light-mode .akun-sidebar a:hover,
+.akun-light-mode .akun-sidebar a:active {
+    background-color: white;
+    color: #111;
+}
+
+.akun-light-mode .akun-form label {
+    color: #000000;
+}
+
+.akun-light-mode .akun-form button {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.akun-light-mode .akun-form button:hover,
+.akun-light-mode .akun-form button:active {
+    background-color: #686868;
+}
+/* ------------------------------------------------------------------- */
+
+/* ----Komponen dalam Dark Mode------------------------------------- */
+.akun-dark-mode {
+    background-color: #2d2d2d;
+}
+
+.akun-dark-mode .akun-navbar-notification-dropdown {
+    background-color: #424242;
+}
+
+.akun-dark-mode .akun-notification-isi span{
+    color: #dddddd;
+}
+
+.akun-dark-mode .akun-notification-judul-nolimit {
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-notification-judul {
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-error p {
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-error button {  
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.akun-dark-mode .akun-hapus-notifikasi-btn:hover {
+    background-color: #686868;
+}
+
+.akun-dark-mode .akun-navbar {
+    background-color: #424242;
+}
+
+.akun-dark-mode .akun-navbar-left a {
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-hamburger img {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 2.5px 3px 2.5px 2px;
+}
+
+.akun-dark-mode .akun-logo-web {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 4px 2px;
+}
+
+.akun-dark-mode .akun-navbar-right img {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.akun-dark-mode .akun-navbar-other-dropdown-menu {
+    background-color: #424242;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.akun-dark-mode .akun-navbar-other-dropdown-menu a {
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-navbar-other-dropdown-menu a:hover,
+.akun-dark-mode .akun-navbar-other-dropdown-menu a:active {
+    background-color: #000;
+    color: #fff;
+}
+ 
+.akun-dark-mode .akun-navbar-right-desktop a {
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-navbar-right-desktop a:hover,
+.akun-dark-mode .akun-navbar-right-desktop a:active {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.akun-dark-mode .akun-garis {
+    background-color: #ffffff;
+}
+
+.akun-dark-mode .akun-language-switch img {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.akun-dark-mode .akun-dropdown-language {
+    background-color: #424242;
+    color: #ffffff;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+.akun-dark-mode .akun-dropdown-language div:hover,
+.akun-dark-mode .akun-dropdown-language div:active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-mode-toggle {
+    border: 1px solid #ffffff;
+}
+
+.akun-dark-mode .akun-mode-icon {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0px 7px rgba(255, 255, 255, 0.9);
+    padding: 2px;
+}
+
+.akun-dark-mode .akun-sidebar {
+    background-color: #111;
+}
+
+.akun-dark-mode .akun-sidebar a {
+    color: white;
+}
+
+.akun-dark-mode .akun-sidebar a:hover,
+.akun-dark-mode .akun-sidebar a:active {
+    background-color: #424242;
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-main-content {
+    background-color: #2d2d2d;
+}
+
+.akun-dark-mode .akun-form label {
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-form button {
+    background-color: #626262;
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-form button:hover,
+.akun-dark-mode .akun-form button:active {
+    background-color: #4f4f4f;
+    color: #ffffff;
+}
+
+.akun-dark-mode .akun-footer-edit {
+    background-color: #2d2d2d;
+}
+
+.akun-dark-mode .akun-footer-edit img {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.akun-dark-mode .akun-footer-edit p {
+    color: #ffffff;
+}
+/* ------------------------------------------------------------------- */
+
+/* ----------Responsif------------------------------------------------ */
+@media (max-width: 973px) {
+    .akun-hamburger img {
+        display: block;
+    }
+
+    .akun-sidebar {
+        transform: translateX(-100%);
+        z-index: 99;
+    }
+
+    .akun-sidebar.akun-open-sidebar {
+        transform: translateX(0);
+    }
+
+    .akun-main-content {
+        margin-left: 0 !important;
+    }
+
+    .akun-footer-edit {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 712px) {
+    .akun-akun-user {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 647px) {
+    .akun-other-icon {
+        display: block;
+    }
+
+    .akun-navbar-right-desktop {
+        display: none;
+    }
+
+    .akun-sidebar {
+        width: 130px;
+    }
+
+    .akun-main-content {
+        padding: 0px 40px;
+    }
+
+    .akun-footer-edit {
+        justify-content: center;
+        gap: 5px;
+        padding-top: 30px;
+        margin-left: 0px;
+        padding-left: 0px;
+        padding-bottom: 30px;
+    }
+
+    .akun-footer-icon {
+        width: auto;
+        height: 16px;
+        padding-bottom: 0.5px;
+    }
+
+    .akun-footer-edit p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 451px) {
+    .akun-navbar {
+        padding: 0px 10px;
+        height: 55px;
+    }
+
+    .akun-navbar-left img {
+        width: 30px;
+    }
+
+    .akun-navbar-left a {
+        font-size: 18px;
+    }
+
+    .akun-navbar-right img {
+        width: 23px;
+        margin: 0px 8px;
+    }
+
+    .akun-navbar-other-dropdown-menu {
+        top: 39px;
+        right: -25px;
+    }
+
+    .akun-navbar-notification-dropdown {
+        top: 39px;
+        right: -90px;
+    }
+
+    .akun-dropdown-language {
+        top: 39px;
+    }
+
+    .akun-mode-toggle {
+        width: 45px;
+        height: 24px;
+        margin: 0px 5px 0px 8px;
+    }
+
+    .akun-mode-toggle.akun-dark .akun-mode-icon {
+        transform: translateX(11px);
+    }
+
+    .akun-mode-toggle.akun-light .akun-mode-icon {
+        transform: translateX(-11px);
+    }
+
+    .akun-tombol-kamar label {
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    .akun-footer-edit {
+        margin-left: 0 !important;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 373px) {
+    .akun-navbar-left img {
+        margin-right: 8px;
+    }
+
+    .akun-garis {
+        display: none;
+    }
+
+    .akun-footer-icon {
+        height: 13px;
+    }
+
+    .akun-footer-edit p {
+        font-size: 11px;
+    }
+}
+/* ------------------------------------------------------------------- */
