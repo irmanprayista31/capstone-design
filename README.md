@@ -1,1 +1,1 @@
-# Synergy with React.js and Express.js
+# Senergy with React.js and Express.js
