@@ -142,7 +142,7 @@ const Akun = () => {
             }
         };
         if (uid) fetchUserData();
-    }, [uid]);
+    }, [uid, t.gagalAmbilData]);
     // =========================================
     
     // ======== Tombol logout =========
@@ -489,7 +489,7 @@ const Akun = () => {
         });
 
         return () => unsubscribe();
-    }, [userData?.email]);
+    }, [userData?.email, t.dataBerhasilDiubah]);
     // ================================================
 
     return (
