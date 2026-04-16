@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import Masuk from './pages/Masuk';
 import Daftar from './pages/Daftar';
@@ -16,6 +16,12 @@ const SESSION_DURATION = 2 * 60 * 60 * 1000;
 function App() {
     const navigate = useNavigate();
     const location = useLocation();
+    const locationRef = useRef(location.pathname);
+
+    // Selalu update ref dengan pathname terbaru
+    useEffect(() => {
+        locationRef.current = location.pathname;
+    }, [location.pathname]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -26,11 +32,11 @@ function App() {
             if (userId && loginTime) {
                 const elapsed = now - parseInt(loginTime, 10);
                 if (elapsed > SESSION_DURATION) {
-                    localStorage.setItem('lastVisitedPage', location.pathname);
+                    localStorage.setItem('lastVisitedPage', locationRef.current);
                     localStorage.removeItem('userId');
                     localStorage.removeItem('loginTime');
                     localStorage.setItem('sessionExpired', 'true');
-                    navigate('/', { state: { from: location.pathname } });
+                    navigate('/', { state: { from: locationRef.current } });
                 }
             }
         }, 1000);
@@ -64,7 +70,7 @@ function App() {
                 navigate(lastPage, { replace: true });
             }
         }
-    }, [location.pathname]);
+    }, [location.pathname, navigate]);
 
     return (
         <>
