@@ -38,7 +38,7 @@ const Beranda = () => {
         localStorage.setItem('language', lang);
         setShowDropdown(false);
     };
-    // ================================
+    // ============================================
 
     // ========= NOTIFICATION FUNCTIONALITY ========
     const notificationRef = useRef(null);
@@ -83,9 +83,9 @@ const Beranda = () => {
             document.removeEventListener('mousedown', handleClickOutsideDropdown);
         };
     }, []);
-    // ================================
+    // ===============================
 
-    // ======== SIDEBAR ========
+    // =========== SIDEBAR ===========
     const toggleSidebar = () => {
         const sidebar = document.getElementById("beranda-sidebar");
         if (sidebar) {
@@ -102,7 +102,6 @@ const Beranda = () => {
         const handleClickOutside = (event) => {
             const sidebar = document.getElementById("beranda-sidebar");
             const hamburger = document.querySelector(".beranda-hamburger");
-
             if (
                 sidebar &&
                 !sidebar.contains(event.target) &&

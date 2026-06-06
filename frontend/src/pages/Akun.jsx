@@ -52,7 +52,6 @@ const Akun = () => {
                 sidebar.classList.remove("akun-open-sidebar");
             }
         };
-
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
@@ -242,7 +241,6 @@ const Akun = () => {
     const [confirmEmail, setConfirmEmail] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [stepConfirm, setStepConfirm] = useState(1);
-    
     const handleDeleteAccount = () => {
         setShowDeleteModal(true);
         setStepConfirm(1);
@@ -274,22 +272,16 @@ const Akun = () => {
         try {
             const credential = EmailAuthProvider.credential(userData.email, confirmPassword);
             await reauthenticateWithCredential(auth.currentUser, credential);
-
             await deleteDoc(doc(db, 'users', uid));
-
             await deleteUser(auth.currentUser);
-
             localStorage.removeItem('userId');
-
             setShowDeleteModal(false);
-
             toast.success(t.tampilanSetelahDelete, { 
                 position: 'top-right', 
                 autoClose: 1000, 
                 closeButton: false, 
                 pauseOnHover: false 
             });
-
             setTimeout(() => navigate('/'), 2000);
 
         } catch (error) {
@@ -319,7 +311,7 @@ const Akun = () => {
             }
         }
     };
-    // ================================================
+    // ============================================================
     
     // ====== Tambahkan state untuk modal verifikasi password ======
     const [showPasswordModal, setShowPasswordModal] = useState(false);
@@ -333,7 +325,6 @@ const Akun = () => {
             const usersRef = collection(db, 'users');
             const q = query(usersRef, where('email', '==', email));
             const querySnapshot = await getDocs(q);
-
             return !querySnapshot.empty;
         } catch (error) {
             console.error('Error checking email:', error);
@@ -364,7 +355,6 @@ const Akun = () => {
             if (!auth.currentUser || !auth.currentUser.email) {
                 throw new Error("User tidak login atau email tidak tersedia");
             }
-
             const credential = EmailAuthProvider.credential(auth.currentUser.email, inputPassword);
             await reauthenticateWithCredential(auth.currentUser, credential);
             return true;
@@ -379,12 +369,9 @@ const Akun = () => {
     const performUpdate = async (payload) => {
         try {
             const userRef = doc(db, 'users', uid);
-
             const { email, ...restPayload } = payload;
-
             if (email && email !== auth.currentUser.email) {
                 await verifyBeforeUpdateEmail(auth.currentUser, email);
-
                 toast.info(t.verifikasiEmailBaru, {
                     position: 'top-right',
                     autoClose: 3000,
@@ -436,7 +423,6 @@ const Akun = () => {
     // ======= Function untuk handle verifikasi password ========
     const handlePasswordVerification = async () => {
         const isValidPassword = await verifyPassword(verificationPassword);
-        
         if (isValidPassword) {
             setShowPasswordModal(false);
             setVerificationPassword('');
@@ -473,14 +459,12 @@ const Akun = () => {
                         const userRef = doc(db, 'users', user.uid);
                         await updateDoc(userRef, { email: authEmail });
                         setUserData((prev) => ({ ...prev, email: authEmail }));
-
                         toast.success(t.dataBerhasilDiubah, {
                             position: 'top-right',
                             autoClose: 2000,
                             closeButton: false,
                             pauseOnHover: false
                         });
-                        
                     } catch (error) {
                         console.error("Gagal update email ke Firestore:", error);
                     }
